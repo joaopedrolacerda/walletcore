@@ -8,7 +8,7 @@ import (
 
 func TestCreateAccount(t *testing.T) {
 	client, _ := NewClient("john Doe", "j@j")
-	account := newAccount(client)
+	account := NewAccount(client)
 
 	assert.NotNil(t, account)
 
@@ -16,19 +16,19 @@ func TestCreateAccount(t *testing.T) {
 }
 
 func TestCreateAccountWithNilClient(t *testing.T) {
-	account := newAccount(nil)
+	account := NewAccount(nil)
 	assert.Nil(t, account)
 }
 func TestCreaditAcco(t *testing.T) {
 	client, _ := NewClient("John Doe", "j@j")
-	account := newAccount(client)
+	account := NewAccount(client)
 	account.Credit(100)
 	assert.Equal(t, float64(100), account.Balance)
 }
 
 func TestDebitAccount(t *testing.T) {
 	client, _ := NewClient("John Doe", "j@j")
-	account := newAccount(client)
+	account := NewAccount(client)
 	account.Credit(100)
 	account.Debit(50)
 	assert.Equal(t, float64(50), account.Balance)

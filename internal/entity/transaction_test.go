@@ -8,10 +8,10 @@ import (
 
 func TestCreateTransaction(t *testing.T) {
 	client1, _ := NewClient("john Doe", "j@j")
-	Account1 := newAccount(client1)
+	Account1 := NewAccount(client1)
 
 	client2, _ := NewClient("john doe 2", "j@j2")
-	Account2 := newAccount(client2)
+	Account2 := NewAccount(client2)
 
 	Account1.Credit(1000)
 	Account2.Credit(1000)
@@ -25,10 +25,10 @@ func TestCreateTransaction(t *testing.T) {
 
 func TestClientTransactionWithInsuficientBalance(t *testing.T) {
 	client1, _ := NewClient("john Doe", "j@j")
-	Account1 := newAccount(client1)
+	Account1 := NewAccount(client1)
 
 	client2, _ := NewClient("john doe 2", "j@j2")
-	Account2 := newAccount(client2)
+	Account2 := NewAccount(client2)
 
 	Account1.Credit(1000)
 	Account2.Credit(1000)

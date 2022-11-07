@@ -14,7 +14,7 @@ type Account struct {
 	UpdatedAt time.Time
 }
 
-func newAccount(client *Client) *Account {
+func NewAccount(client *Client) *Account {
 
 	if client == nil {
 		return nil
